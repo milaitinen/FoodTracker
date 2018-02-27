@@ -6,6 +6,7 @@ import { ListItem, Separator } from '../components/ListItem';
 import restaurants from '../data/restaurants.json';
 import { Searchbar } from '../components/Searchbar';
 
+// Display a list of restaurants found in restaurants.json
 class RestaurantList extends React.Component {
     constructor(props)
     {
@@ -15,10 +16,12 @@ class RestaurantList extends React.Component {
         }
     }
 
+    // Navigate to RestaurantView when a restaurant in the list is clicked
     handlePress = (title, data) => {
         this.props.navigation.navigate('RestaurantView', { title, data });
     };
 
+    // Filter restaurants according to the string user types into the search bar
     findAndFilter = (text) => {
         const filteredRestaurants = restaurants.filter(r => r.name.toLowerCase().includes(text.toLowerCase()));
         this.setState({ restaurants: filteredRestaurants });
@@ -28,7 +31,7 @@ class RestaurantList extends React.Component {
 
         return (
             <View style={{ flex: 1 }}>
-                <StatusBar translucent={false} barStyle="default" />
+                <StatusBar translucent={false} barStyle="light-content" />
                 <Searchbar
                     onChangeText={text => { this.findAndFilter(text); }}
                 />

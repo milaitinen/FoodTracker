@@ -10,6 +10,7 @@ import Menu from '../screens/Menu';
 
 const primaryGreen = '#00BD9D';
 
+// Handle navigation
 const HomeStack = StackNavigator(
     {
         Home: {
@@ -25,7 +26,7 @@ const HomeStack = StackNavigator(
             navigationOptions: {
                 headerStyle: {backgroundColor: primaryGreen},
                 headerTintColor: 'white',
-                headerTitle: 'Your recent orders',
+                headerTitle: 'Recently ordered',
                 headerBackTitle: null,
             },
         },

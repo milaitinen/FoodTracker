@@ -7,6 +7,7 @@ const ListItem = ({
     item,
     price,
     restaurant,
+    time_completed,
     onPress,
     selected = false,
     visible = true,
@@ -22,6 +23,12 @@ const ListItem = ({
                 restaurant &&
                 <View style={styles.restaurant}>
                     <Text style={styles.text}>{restaurant}</Text>
+                </View>
+            }
+            {
+                time_completed &&
+                <View style={styles.time}>
+                    <Text style={{ color: '#797979', fontSize: 10 }}>{time_completed}</Text>
                 </View>
             }
         </View>

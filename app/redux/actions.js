@@ -1,3 +1,5 @@
+// Redux action creators
+
 export const INSERT_FIRSTNAME   = 'INSERT_FIRSTNAME';
 export const INSERT_LASTNAME    = 'INSERT_LASTNAME';
 export const INSERT_ID          = 'INSERT_ID';

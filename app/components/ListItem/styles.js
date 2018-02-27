@@ -15,7 +15,10 @@ const styles = EStyleSheet.create({
     restaurant: {
         flex: 1,
         fontSize: 14,
-        textAlign: 'right',
+    },
+    time: {
+        flex: 1,
+        fonstSize: 10
     },
     separator: {
         marginLeft: 20,

@@ -8,6 +8,7 @@ import styles from './styles';
 import orders from '../data/orders.json';
 import { insertFirstname, insertLastname, insertID } from '../redux/actions';
 
+// Home screen, where user can either log in with his/her name (.e.g 'Tapio' and 'Ruutu'), or enter as anonymous user
 class Home extends React.Component {
 
     constructor(props)
@@ -15,19 +16,20 @@ class Home extends React.Component {
         super(props);
     }
 
-
+    // If correct first and last name is entered, navigate to CustomerHistory screen.
+    // If name is not found in order.json, alert will be displayed.
     logIn = () => {
         const customer = orders.filter(i =>
             i.customer.first_name === this.props.firstName && i.customer.last_name === this.props.lastName);
-
         if (customer[0]) {
             this.props.navigation.navigate('CustomerHistory');
             this.props.dispatch(insertID(customer[0].customer.id))
         } else {
-            alert('No customer data found. You can also log in as anonymous viewer.');
+            alert('No customer data found. You can also log in as anonymous user.');
         }
     };
 
+    // Navigate to RestaurantList. Anonymous user cannot see his/her order history
     logInAnonymous = () => {
         this.props.navigation.navigate('RestaurantList');
     };
@@ -36,8 +38,8 @@ class Home extends React.Component {
         return (
             <View style={styles.container} >
 
-                <StatusBar translucent={false} backgroundColor="blue" barStyle="light-content" />
-                <Text style={styles.title} >FoodFighter</Text>
+                <StatusBar translucent={false} barStyle="light-content" />
+                <Text style={styles.title} >FoodTracker</Text>
 
                 <TextInput
                     placeholder={'First name'}
@@ -57,6 +59,7 @@ class Home extends React.Component {
     }
 }
 
+// Necessary to retrieve information from Redux store
 const mapStateToProps = (state) => {
     const firstName = state.firstName;
     const lastName = state.lastName;

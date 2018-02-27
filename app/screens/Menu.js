@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View, StatusBar } from 'react-native';
 
 import orders from '../data/orders.json';
 import { ListItem, Separator } from '../components/ListItem';
 
-
+// Display menu of the restaurant found in orders.json based on the restaurant's ID
 class Menu extends React.Component {
     constructor(props)
     {
@@ -20,6 +20,7 @@ class Menu extends React.Component {
         this.setMenu(id);
     }
 
+    // filter restaurant's items from orders.json
     setMenu = (id) => {
         const menu = {};
         const filteredList = orders.filter(order => order.restaurant_id === id);
@@ -33,6 +34,7 @@ class Menu extends React.Component {
 
         return (
             <View style={{ flex: 1 }}>
+                <StatusBar translucent={false} barStyle="light-content" />
                 <FlatList
                     data={Object.values(this.state.menu)}
                     renderItem={({ item, index }) => (
