@@ -17,10 +17,10 @@ const styles = EStyleSheet.create({
         padding: 10,
         paddingRight: 15,
         paddingLeft: 15,
-        borderColor: '#9dcbe5',
+        borderColor: '$primaryGreen',
     },
     text: {
-        color: '#274752',
+        color: '$inputText',
         textAlign: 'center',
     },
 });

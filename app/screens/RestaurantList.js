@@ -16,6 +16,8 @@ class RestaurantList extends React.Component {
     }
 
     handlePress = (title, data) => {
+        console.log('title', title);
+        console.log('data', data);
         this.props.navigation.navigate('RestaurantView', { title, data });
     };
 

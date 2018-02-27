@@ -18,6 +18,7 @@ class RestaurantView extends React.Component {
     }
 
     componentDidMount() {
+        console.log('this.state.info', this.state.info);
         this.updateState();
     }
 
@@ -36,16 +37,16 @@ class RestaurantView extends React.Component {
         const { info } = this.state;
 
         return (
-            <View style={{ flex: 1, padding: 10, backgroundColor: 'white' }}>
+            <View style={{ flex: 1, padding: 5, backgroundColor: 'white' }}>
                 <StatusBar translucent={false} barStyle="default" />
+                <View style={{ padding: 10, paddingBottom: 20 }}>
+                    <Text>{`${info.description} \n`}</Text>
 
-                <Text>{`${info.description} \n`}</Text>
+                    <InfoText icon={'phone'} text={info.phone_number} />
+                    <InfoText icon={'map'} text={info.localized_city_name} />
 
-                <InfoText icon={'phone'} text={info.phone_number} />
-                <InfoText icon={'map'} text={info.localized_city_name} />
-
-                <Text>{`\nThis restaurant has been visited ${this.state.visited} times during the past month.`}</Text>
-
+                    <Text>{`\nThis restaurant has been visited ${this.state.visited} times during the past month.`}</Text>
+                </View>
                 <Button onPress={this.onPress}>
                     Click to see popular menu
                 </Button>

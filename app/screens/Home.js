@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, StatusBar, TextInput, Keyboard, View, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 
-import { Button } from '../components/Button';
+import { SignInButton } from '../components/Button';
 import { InputWithButton } from '../components/TextInput';
 import styles from './styles';
 import orders from '../data/orders.json';
@@ -49,8 +49,8 @@ class Home extends React.Component {
                     onChangeText={lastName => this.props.dispatch(insertLastname(lastName))}
                 />
 
-                <Button onPress={this.logIn}>Sign In</Button>
-                <Button onPress={this.logInAnonymous}>Enter as Anonymous</Button>
+                <SignInButton onPress={this.logIn}>Sign In</SignInButton>
+                <SignInButton onPress={this.logInAnonymous}>Enter as Anonymous</SignInButton>
 
             </View>
         );

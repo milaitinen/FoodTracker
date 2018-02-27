@@ -4,11 +4,11 @@ import color from 'color';
 
 import styles from './styles';
 
-const Button = ({ onPress, children }) => {
+const SignInButton = ({ onPress, children }) => {
     const underlayColor = color('#E2E2E2').darken(0.1);
 
     return (
-        <View style={{ padding: 10 }}>
+        <View style={styles.container}>
             <TouchableHighlight
                 onPress={onPress}
                 style={styles.buttonContainer}
@@ -20,4 +20,4 @@ const Button = ({ onPress, children }) => {
     );
 };
 
-export default Button;
+export default SignInButton;
