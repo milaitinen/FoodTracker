@@ -1,3 +1,13 @@
+# FoodTracker
+
+A simple create-react-native-app that lets users of the app log in and see their restaurant order history, as well as view a list of restaurants and their menus.
+
+## Quick start
+
+To run the application you need yarn. Run `yarn install` and then `yarn start` to start the application.
+
+Use the first name Daniel and last name Saksala to log in and see order history. Other valid names can be found in `app/data/orders.json`.
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
