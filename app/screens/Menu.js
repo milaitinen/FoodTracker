@@ -43,7 +43,7 @@ class Menu extends React.Component {
                             price={`${item.price}€`}
                         />
                     )}
-                    keyExtractor={index => index}
+                    keyExtractor={item => item.id}
                     ItemSeparatorComponent={Separator}
                 />
             </View>

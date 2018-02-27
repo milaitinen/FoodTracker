@@ -11,7 +11,6 @@ const styles = EStyleSheet.create({
     },
     button: {
         backgroundColor: '$primaryGreen',
-        color: '$white',
         borderRadius: BORDER_RADIUS,
         paddingVertical: 10,
         paddingHorizontal: 15,

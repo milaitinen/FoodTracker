@@ -4,7 +4,6 @@ export default EStyleSheet.create({
     contactInfo: {
         flexDirection: 'row',
         padding: 5,
-        color: '$inputText'
     },
 });
 

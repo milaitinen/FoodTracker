@@ -14,11 +14,9 @@ const styles = EStyleSheet.create({
     },
     restaurant: {
         flex: 1,
-        fontSize: 14,
     },
     time: {
         flex: 1,
-        fontSize: 10
     },
     separator: {
         marginLeft: 20,
@@ -27,7 +25,8 @@ const styles = EStyleSheet.create({
         height: StyleSheet.hairlineWidth
     },
     text: {
-        color: '$primaryGreen'
+        color: '$primaryGreen',
+        fontSize: 14,
     }
 
 });
