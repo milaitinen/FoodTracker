@@ -3,18 +3,22 @@ import { StyleSheet } from 'react-native';
 
 const styles = EStyleSheet.create({
     $underlayColor: '$border',
-
-    row: {
-        paddingHorizontal: 20,
-        paddingVertical: 16,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+    container: {
         backgroundColor: '$white'
     },
-    text: {
-        fontSize: 16,
-        color: '$darkText'
+    row: {
+        flex: 1,
+        paddingHorizontal: 20,
+        paddingTop: 16,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    restaurant: {
+        flex: 1,
+        paddingHorizontal: 20,
+        paddingBottom: 16,
+        fontSize: 14,
+        textAlign: 'right',
     },
     separator: {
         marginLeft: 20,
@@ -22,14 +26,10 @@ const styles = EStyleSheet.create({
         flex: 1,
         height: StyleSheet.hairlineWidth
     },
-    icon: {
-        backgroundColor: 'transparent',
-        width: 30,
-        height: 30,
-        borderRadius: 15,
-        alignItems: 'center',
-        justifyContent: 'center'
+    text: {
+        color: '$primaryGreen'
     }
+
 });
 
 export default styles;

@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, View, StatusBar, ActivityIndicator } from 'react-native';
 
 import orders from '../data/orders.json';
-import { ListItem, Separator } from '../components/List';
+import { ListItem, Separator } from '../components/ListItem';
 import styles from './styles';
 
 class Menu extends React.Component {
@@ -51,7 +51,7 @@ class Menu extends React.Component {
                     data={Object.values(this.state.menu)}
                     renderItem={({ item, index }) => (
                         <ListItem
-                            text={item.name.split('.')[1] || item.name}
+                            item={item.name.split('. ')[1] || item.name}
                             price={`${item.price}€`}
                         />
                     )}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { FlatList, View, StatusBar } from 'react-native';
+import { connect } from 'react-redux';
 
-import { ListItem, Separator } from '../components/List';
+import { ListItem, Separator } from '../components/ListItem';
 import restaurants from '../data/restaurants.json';
 import { Searchbar } from '../components/Searchbar';
 
@@ -20,10 +21,11 @@ class RestaurantList extends React.Component {
 
     findAndFilter = (text) => {
         const filteredRestaurants = restaurants.filter(r => r.name.toLowerCase().includes(text.toLowerCase()));
-        this.setState({ restaurants: filteredRestaurants });
+        this.setState({ restaurants: filteredRestaurants, isLoading: false });
     };
 
     render() {
+
         return (
             <View style={{ flex: 1 }}>
                 <StatusBar translucent={false} barStyle="default" />
@@ -34,7 +36,7 @@ class RestaurantList extends React.Component {
                     data={this.state.restaurants}
                     renderItem={({ item, index }) => (
                         <ListItem
-                            text={item.name}
+                            item={item.name}
                             onPress={() => this.handlePress(item.name, item)}
                         />
                     )}
@@ -46,4 +48,16 @@ class RestaurantList extends React.Component {
     }
 }
 
-export default RestaurantList;
+const mapStateToProps = (state) => {
+    const firstName = state.firstName;
+    const lastName = state.lastName;
+    const customerID = state.customerID;
+
+    return {
+        firstName,
+        lastName,
+        customerID
+    };
+};
+
+export default connect(mapStateToProps)(RestaurantList);

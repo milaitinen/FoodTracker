@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import Home from '../screens/Home';
 import RestaurantList from '../screens/RestaurantList';
 import RestaurantView from '../screens/RestaurantView';
+import CustomerHistory from '../screens/CustomerHistory';
 import Menu from '../screens/Menu';
 
 const HomeStack = StackNavigator(
@@ -13,6 +14,13 @@ const HomeStack = StackNavigator(
             navigationOptions: {
                 header: () => null,
                 headerTitle: 'Home',
+                headerBackTitle: null,
+            },
+        },
+        CustomerHistory: {
+            screen: CustomerHistory,
+            navigationOptions: {
+                headerTitle: 'Your recent orders',
                 headerBackTitle: null,
             },
         },
@@ -41,16 +49,7 @@ const HomeStack = StackNavigator(
         headerMode: 'screen',
     },
 );
-/*
-const CurrencyListStack = StackNavigator({
-    CurrencyList: {
-        screen: CurrencyList,
-        navigationOptions: ({ navigation }) => ({
-            headerTitle: navigation.state.params.title,
-        }),
-    },
-});
-*/
+
 export default StackNavigator(
     {
         Home: {

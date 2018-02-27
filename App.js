@@ -1,8 +1,11 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 import Home from './app/screens/Home';
 import RestaurantList from './app/screens/RestaurantList';
 import Navigator from './app/config/routes';
+import store from './app/redux/store';
+import { Provider } from 'react-redux';
 
 EStyleSheet.build({
     $primaryBlue: '#4F6D7A',
@@ -17,10 +20,12 @@ EStyleSheet.build({
 });
 
 export default class App extends React.Component {
-  render() {
-    return (
-        <Navigator />
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+                <Navigator onNavigationStateChange={null}/>
+            </Provider>
+        );
+    }
 }
 
