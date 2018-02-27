@@ -15,11 +15,5 @@ export default EStyleSheet.create({
         marginTop: 15,
         paddingBottom: 30,
     },
-    contactInfo: {
-        flexDirection: 'row',
-        //backgroundColor: 'transparent',
-    },
-
-
 });
 

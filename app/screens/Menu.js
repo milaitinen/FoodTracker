@@ -1,9 +1,9 @@
 import React from 'react';
-import { FlatList, View, StatusBar, ActivityIndicator } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 import orders from '../data/orders.json';
 import { ListItem, Separator } from '../components/ListItem';
-import styles from './styles';
+
 
 class Menu extends React.Component {
     constructor(props)
@@ -11,7 +11,6 @@ class Menu extends React.Component {
         super(props);
         this.state = {
             restaurantID: null,
-            isLoading: true,
             menu: {}
         };
     }
@@ -27,23 +26,10 @@ class Menu extends React.Component {
         const filteredItems = filteredList.map(order => order.items);
         filteredItems.forEach(order => order.forEach(i => menu[i.id] = i));
 
-        this.setState({ menu, restaurantID: id, isLoading: false})
+        this.setState({ menu, restaurantID: id })
     };
 
     render() {
-        const { info } = this.state;
-
-        if (this.state.isLoading) {
-            return (
-                <View>
-                    <ActivityIndicator
-                        animating={this.state.animating}
-                        size='large'
-                        color={'#88daf2'}
-                    />
-                </View>
-            );
-        }
 
         return (
             <View style={{ flex: 1 }}>
@@ -62,17 +48,5 @@ class Menu extends React.Component {
         );
     }
 }
-
-/*<StatusBar translucent={false} barStyle="default" />
-                <FlatList
-                    data={menu}
-                    renderItem={({ item, index }) => (
-                        <ListItem
-                            text={item.name}
-                        />
-                    )}
-                    keyExtractor={restaurant => restaurant.id}
-                    ItemSeparatorComponent={Separator}
-                />*/
 
 export default Menu;

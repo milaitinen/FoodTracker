@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, FlatList, View, StatusBar } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 
-import { InfoText } from '../components/InfoText';
+import { ContactInfo } from '../components/ContactInfo';
 import { Button } from '../components/Button';
 import orders from '../data/orders';
-import styles from './styles';
+
 
 class RestaurantView extends React.Component {
     constructor(props)
@@ -12,20 +12,17 @@ class RestaurantView extends React.Component {
         super(props);
         this.state = {
             info: [],
-            visited: 0,
-            customerID: null,
+            visited: 0
         };
     }
 
     componentDidMount() {
-        console.log('this.state.info', this.state.info);
         this.updateState();
     }
 
     updateState = () => {
       const info = this.props.navigation.state.params.data;
       const visited = orders.filter(order => order.restaurant_id === info.id).length || 0;
-      if (this.props.navigation.state.params)
       this.setState({ info, visited });
     };
 
@@ -42,8 +39,8 @@ class RestaurantView extends React.Component {
                 <View style={{ padding: 10, paddingBottom: 20 }}>
                     <Text>{`${info.description} \n`}</Text>
 
-                    <InfoText icon={'phone'} text={info.phone_number} />
-                    <InfoText icon={'map'} text={info.localized_city_name} />
+                    <ContactInfo icon={'phone'} text={info.phone_number} />
+                    <ContactInfo icon={'map'} text={info.localized_city_name} />
 
                     <Text>{`\nThis restaurant has been visited ${this.state.visited} times during the past month.`}</Text>
                 </View>

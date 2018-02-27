@@ -4,19 +4,16 @@ import { StyleSheet } from 'react-native';
 const styles = EStyleSheet.create({
     $underlayColor: '$border',
     container: {
+        padding: 20,
         backgroundColor: '$white'
     },
     row: {
         flex: 1,
-        paddingHorizontal: 20,
-        paddingTop: 16,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
     restaurant: {
         flex: 1,
-        paddingHorizontal: 20,
-        paddingBottom: 16,
         fontSize: 14,
         textAlign: 'right',
     },

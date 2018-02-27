@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import styles from './styles';
 
-const InfoText = ({icon, text}) => {
+const ContactInfo = ({icon, text}) => {
     return (
         <View style={styles.contactInfo}>
             <Icon name={icon} size={16}/>
@@ -13,4 +13,4 @@ const InfoText = ({icon, text}) => {
     );
 };
 
-export default InfoText;
+export default ContactInfo;

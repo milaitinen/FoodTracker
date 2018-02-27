@@ -1,9 +1,7 @@
-// easier to refactor later and debug
 export const INSERT_FIRSTNAME   = 'INSERT_FIRSTNAME';
 export const INSERT_LASTNAME    = 'INSERT_LASTNAME';
 export const INSERT_ID          = 'INSERT_ID';
 
-// return an object
 export const insertFirstname = (name) => ({
     type: INSERT_FIRSTNAME,
     firstName: name

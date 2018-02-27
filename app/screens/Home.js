@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, StatusBar, TextInput, Keyboard, View, TouchableHighlight } from 'react-native';
+import { Text, StatusBar, View } from 'react-native';
 import { connect } from 'react-redux';
 
 import { SignInButton } from '../components/Button';
-import { InputWithButton } from '../components/TextInput';
+import { TextInput } from '../components/TextInput';
 import styles from './styles';
 import orders from '../data/orders.json';
 import { insertFirstname, insertLastname, insertID } from '../redux/actions';
@@ -39,12 +39,12 @@ class Home extends React.Component {
                 <StatusBar translucent={false} backgroundColor="blue" barStyle="light-content" />
                 <Text style={styles.title} >FoodFighter</Text>
 
-                <InputWithButton
+                <TextInput
                     placeholder={'First name'}
                     onChangeText={firstName => this.props.dispatch(insertFirstname(firstName))}
                 />
 
-                <InputWithButton
+                <TextInput
                     placeholder={'Last name'}
                     onChangeText={lastName => this.props.dispatch(insertLastname(lastName))}
                 />

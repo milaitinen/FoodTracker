@@ -5,7 +5,6 @@ export default EStyleSheet.create({
         flexDirection: 'row',
         padding: 5,
         color: '$inputText'
-        //backgroundColor: 'transparent',
     },
 });
 

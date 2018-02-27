@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { INSERT_FIRSTNAME, INSERT_LASTNAME, INSERT_ID } from './actions';
 
 const initialState = {

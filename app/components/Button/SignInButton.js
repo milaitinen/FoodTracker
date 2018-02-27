@@ -5,13 +5,13 @@ import color from 'color';
 import styles from './styles';
 
 const SignInButton = ({ onPress, children }) => {
-    const underlayColor = color('#E2E2E2').darken(0.1);
+    const underlayColor = color('#00BD9D').darken(0.1);
 
     return (
         <View style={styles.container}>
             <TouchableHighlight
                 onPress={onPress}
-                style={styles.buttonContainer}
+                style={styles.signInButton}
                 underlayColor={underlayColor}
             >
                 <Text style={styles.text}>{children}</Text>

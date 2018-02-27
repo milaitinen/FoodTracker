@@ -5,16 +5,16 @@ import color from 'color';
 import styles from './styles';
 
 const Button = ({ onPress, children }) => {
-    const underlayColor = color('#E2E2E2').darken(0.1);
+    const underlayColor = color('#00BD9D').darken(0.1);
 
     return (
-        <View style={{ padding: 10 }}>
+        <View style={{ paddingHorizontal: 40, paddingVertical: 10 }}>
             <TouchableHighlight
                 onPress={onPress}
-                style={styles.buttonContainer}
+                style={styles.button}
                 underlayColor={underlayColor}
             >
-                <Text style={styles.text}>{children}</Text>
+                <Text style={styles.whiteText}>{children}</Text>
             </TouchableHighlight>
         </View>
     );

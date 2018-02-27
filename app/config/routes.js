@@ -7,6 +7,9 @@ import RestaurantView from '../screens/RestaurantView';
 import CustomerHistory from '../screens/CustomerHistory';
 import Menu from '../screens/Menu';
 
+
+const primaryGreen = '#00BD9D';
+
 const HomeStack = StackNavigator(
     {
         Home: {
@@ -20,6 +23,8 @@ const HomeStack = StackNavigator(
         CustomerHistory: {
             screen: CustomerHistory,
             navigationOptions: {
+                headerStyle: {backgroundColor: primaryGreen},
+                headerTintColor: 'white',
                 headerTitle: 'Your recent orders',
                 headerBackTitle: null,
             },
@@ -27,6 +32,8 @@ const HomeStack = StackNavigator(
         RestaurantList: {
             screen: RestaurantList,
             navigationOptions: {
+                headerStyle: {backgroundColor: primaryGreen},
+                headerTintColor: 'white',
                 headerTitle: 'Restaurants',
                 headerBackTitle: null,
             },
@@ -34,6 +41,8 @@ const HomeStack = StackNavigator(
         RestaurantView: {
             screen: RestaurantView,
             navigationOptions: ({ navigation }) => ({
+                headerStyle: {backgroundColor: primaryGreen},
+                headerTintColor: 'white',
                 headerTitle: navigation.state.params.title,
                 headerBackTitle: null
             }),
@@ -41,6 +50,8 @@ const HomeStack = StackNavigator(
         Menu: {
             screen: Menu,
             navigationOptions: ({ navigation }) => ({
+                headerStyle: {backgroundColor: primaryGreen},
+                headerTintColor: 'white',
                 headerTitle: 'Popular menu'
             }),
         }

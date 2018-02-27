@@ -3,12 +3,10 @@ import { View, Text, TouchableHighlight, TextInput } from 'react-native';
 
 import styles from './styles';
 
-const InputWithButton = (props) => {
-
-    const containerStyles = [styles.container];
+const Input = (props) => {
 
     return (
-        <View style={containerStyles}>
+        <View style={styles.container}>
             <TouchableHighlight
                 style={styles.buttonContainer}>
                 <Text>{props.buttonText}</Text>
@@ -19,4 +17,4 @@ const InputWithButton = (props) => {
     );
 };
 
-export default InputWithButton;
+export default Input;

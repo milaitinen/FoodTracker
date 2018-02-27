@@ -16,14 +16,12 @@ class RestaurantList extends React.Component {
     }
 
     handlePress = (title, data) => {
-        console.log('title', title);
-        console.log('data', data);
         this.props.navigation.navigate('RestaurantView', { title, data });
     };
 
     findAndFilter = (text) => {
         const filteredRestaurants = restaurants.filter(r => r.name.toLowerCase().includes(text.toLowerCase()));
-        this.setState({ restaurants: filteredRestaurants, isLoading: false });
+        this.setState({ restaurants: filteredRestaurants });
     };
 
     render() {
@@ -50,16 +48,4 @@ class RestaurantList extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const firstName = state.firstName;
-    const lastName = state.lastName;
-    const customerID = state.customerID;
-
-    return {
-        firstName,
-        lastName,
-        customerID
-    };
-};
-
-export default connect(mapStateToProps)(RestaurantList);
+export default connect()(RestaurantList);

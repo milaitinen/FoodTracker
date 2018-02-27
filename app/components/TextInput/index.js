@@ -1,4 +1,4 @@
-import InputWithButton from './TextInput';
+import TextInput from './TextInput';
 import styles from './styles';
 
-export { InputWithButton, styles };
+export { TextInput, styles };

@@ -22,9 +22,7 @@ export default EStyleSheet.create({
     },
     buttonContainer: {
         height: INPUT_HEIGHT,
-        alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '$white',
         borderTopLeftRadius: BORDER_RADIUS,
         borderBottomLeftRadius: BORDER_RADIUS
     },
