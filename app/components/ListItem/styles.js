@@ -18,7 +18,7 @@ const styles = EStyleSheet.create({
     },
     time: {
         flex: 1,
-        fonstSize: 10
+        fontSize: 10
     },
     separator: {
         marginLeft: 20,
