@@ -21,7 +21,7 @@ class Searchbar extends React.Component {
                 containerStyle={styles.searchBarContainer}
                 inputStyle={ styles.searchBarInput }
                 icon={{ style: styles.searchIcon }}
-                placeholder={'Search restaurant'}
+                placeholder={'Search restaurants'}
             />
         );
     }

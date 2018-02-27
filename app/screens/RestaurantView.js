@@ -47,7 +47,7 @@ class RestaurantView extends React.Component {
                     <Text>{`\nThis restaurant has been visited ${this.state.visited} times during the past month.`}</Text>
                 </View>
                 <Button onPress={this.onPress}>
-                    Click to see popular menu
+                    Popular menu
                 </Button>
 
 
